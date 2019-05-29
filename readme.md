@@ -8,10 +8,10 @@ It could be done more generic, but currently it's tailored for giphy.com API.
 1. Install dependencies: `yarn`
 2. Compile TypeScript files: `./node_modules/.bin/tsc`
 3. Install the front-end app:
-  3.1 Clone https://github.com/mvasin/giphy-client
-  3.2 Install dependencies: `yarn`
-  3.3 Build: `yarn build`
-  3.4 Copy output of this command:
+- Clone https://github.com/mvasin/giphy-client
+- Install dependencies: `yarn`
+- Build: `yarn build`
+- Copy output of this command:
   ```
   echo `pwd`/build
   ```
