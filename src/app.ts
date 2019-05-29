@@ -6,8 +6,12 @@ import serveHandler from 'serve-handler';
 
 
 const PROXY_PORT = 8080;
-const {API_KEY} = process.env;
+const {API_KEY, STATIC_DIR} = process.env;
 if (!API_KEY) {
+  throw Error('API_KEY environment variable is not set!');
+}
+
+if (!STATIC_DIR) {
   throw Error('API_KEY environment variable is not set!');
 }
 
@@ -29,7 +33,7 @@ const requestListener: RequestListener = (proxyRequest, proxyResponse) => {
 
     // static files from /app folder
     serveHandler(proxyRequest, proxyResponse, {
-      public: '/app',
+      public: STATIC_DIR,
       cleanUrls: true
     })
   } catch(error) {
@@ -67,6 +71,5 @@ function getUpstreamOptions(request: http.IncomingMessage): RequestOptions {
     headers: {Accept: "application/json"},
     timeout: 1000
   };
-  console.log(upstreamOptions);
   return upstreamOptions;
 }

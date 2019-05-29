@@ -3,7 +3,26 @@ This web server serves static assets and adds API key to every upstream API requ
 
 ## Currently a GIPHY proxy API server
 It could be done more generic, but currently it's tailored for giphy.com API.
-Put your giphy.com API key to `API_KEY` environment variable and enjoy hiding it from outer world. The proxy server will add `api_key=xxx` to your URL search string in requests to upstream API.
+
+## How to start
+1. Install dependencies: `yarn`
+2. Compile TypeScript files: `./node_modules/.bin/tsc`
+3. Install the front-end app:
+  3.1 Clone https://github.com/mvasin/giphy-client
+  3.2 Install dependencies: `yarn`
+  3.3 Build: `yarn build`
+  3.4 Copy output of this command:
+  ```
+  echo `pwd`/build
+  ```
+4. `cd` back to directory of this repo and start the API proxy server with API key and path to compiled front-end app:
+```
+API_KEY=XXXXXXXX STATIC_DIR=/Users/John/giphy-client/build/ yarn prod
+```
+5. Navigate to `localhost:8080`
+
+## How to use
+The proxy server will add `api_key=xxx` to your URL search string in requests to upstream API.
 
 It currently serves only `GET` requests. All `/v1/gifs/search` requests are routed to `https://api.giphy.com/v1/gifs/search`, for the rest it tries to serve `/app` directory.
 
