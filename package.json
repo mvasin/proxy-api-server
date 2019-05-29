@@ -2,14 +2,20 @@
   "name": "giphy-proxy-backend",
   "version": "0.0.1",
   "description": "Proxy server that hides GIPHY API key",
-  "main": "index.js",
+  "main": "app.js",
   "repository": "https://github.com/mvasin/giphy-proxy-server",
   "author": "Mikhail Vasin",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.3",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
+    "ts-node-dev": "^1.0.0-pre.39",
     "typescript": "^3.4.5"
+  },
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts",
+    "prod": "node ./build/app.js"
   }
 }
