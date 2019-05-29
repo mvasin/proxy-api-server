@@ -17,5 +17,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly ./src/app.ts",
     "prod": "node ./build/app.js"
+  },
+  "dependencies": {
+    "serve-handler": "^6.0.1"
   }
 }
