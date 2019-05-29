@@ -15,6 +15,7 @@ It could be done more generic, but currently it's tailored for giphy.com API.
   ```
   echo `pwd`/build
   ```
+  to use it later as STATIC_DIR environment variable
 4. `cd` back to directory of this repo and start the API proxy server with API key and path to compiled front-end app:
 ```
 API_KEY=XXXXXXXX STATIC_DIR=/Users/John/giphy-client/build/ yarn prod
