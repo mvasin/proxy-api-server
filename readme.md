@@ -19,7 +19,7 @@ It could be done more generic, but currently it's tailored for giphy.com API.
 ```
 API_KEY=XXXXXXXX STATIC_DIR=/Users/John/giphy-client/build/ yarn prod
 ```
-5. Navigate to `localhost:8080`
+5. Navigate to `localhost:3000`
 
 ## How to use
 The proxy server will add `api_key=xxx` to your URL search string in requests to upstream API.

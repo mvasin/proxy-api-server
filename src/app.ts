@@ -5,7 +5,7 @@ import https from 'https';
 import serveHandler from 'serve-handler';
 
 
-const PROXY_PORT = 8080;
+const PROXY_PORT = 3000;
 const {API_KEY, STATIC_DIR} = process.env;
 if (!API_KEY) {
   throw Error('API_KEY environment variable is not set!');
